@@ -1,0 +1,24 @@
+{
+  "name": "random-js",
+  "version": "1.0.0",
+  "description": "Faster random function",
+  "main": "random.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hendrysadrak/random-js.git"
+  },
+  "keywords": [
+    "random",
+    "js",
+    "javascript"
+  ],
+  "author": "Hendry Sadrak <hendry.sadrak@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hendrysadrak/random-js/issues"
+  },
+  "homepage": "https://github.com/hendrysadrak/random-js#readme"
+}
