@@ -1,3 +1,6 @@
+/**
+ * Random function
+ */
 var random = (function randomConstruct() {
     /**
      * Vars
