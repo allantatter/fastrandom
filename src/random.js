@@ -3,6 +3,8 @@
  * Author: Hendry Sadrak <hendry.sadrak@outlook.com>
  */
 (function randomConstruct() {
+    "use strict";
+
     /**
      * Options
      */
