@@ -52,6 +52,8 @@
 
     /**
      * Returns random value
+     * @param index
+     * @returns {*}
      */
     var random = function random(index) {
         /**
@@ -75,32 +77,81 @@
     };
 
     /**
-     * Apply some values to random function and return it
+     * Extends random functions with some values
      */
-    random.valueOf = random;
-    random.options = _options;
-    random.randomChanger = randomChanger;
-    random._randomArray = _randomArray;
+    function setRandomExtentions() {
+        /**
+         * Random valueOf
+         * @type {Function}
+         */
+        random.valueOf = random;
+
+        /**
+         * Random function options
+         * @type {Object}
+         */
+        random.options = _options;
+
+        /**
+         * Function to generate one new random value
+         * @type {Function}
+         */
+        random.randomChanger = randomChanger;
+
+        /**
+         * If Object.defineProperty is defined then add some getters fo extended api usage
+         */
+        if (typeof Object.defineProperty !== "undefined") {
+            /**
+             * random.randomArray returns urrent random values array
+             */
+            Object.defineProperty(random, 'randomArray', {
+                get: function () {
+                    return _randomArray;
+                }
+            });
+
+            /**
+             * random.currentRandomIndex returns current index where random function is at in array
+             */
+            Object.defineProperty(random, 'currentRandomIndex', {
+                get: function () {
+                    return _currentRandomIndex;
+                }
+            });
+        }
+    }
 
     /**
-     * Export as module
+     * Exports random to different roots
      */
-    if (typeof module === "object" && typeof module.exports === "object") {
-        module.exports = random;
-    }
-    /**
-     * Register as AMD module
-     */
-    else if (typeof define === "function" && define.amd) {
-        define("random", [], function () {
-            return random;
-        });
+    function setRandomExport() {
+        /**
+         * Export as module
+         */
+        if (typeof module === "object" && typeof module.exports === "object") {
+            module.exports = random;
+        }
+        /**
+         * Register as AMD module
+         */
+        else if (typeof define === "function" && define.amd) {
+            define("random", [], function () {
+                return random;
+            });
+        }
+
+        /**
+         * If there is a window object, that at least has a document property, define random
+         */
+        if (typeof window === "object" && typeof window.document === "object") {
+            window.random = random;
+        }
     }
 
     /**
-     * If there is a window object, that at least has a document property, define random
+     * Do the magic ;)
      */
-    if (typeof window === "object" && typeof window.document === "object") {
-        window.random = random;
-    }
+    setRandomExtentions();
+    setRandomExport();
 })();
