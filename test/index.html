@@ -1,14 +1,63 @@
 <!doctype html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Random-js test</title>
 </head>
-
 <body>
-<script src="../src/random.js"></script>
-</body>
 
+<h1>Check console</h1>
+<h2>Best with chrome</h2>
+
+<script src="../src/random.js"></script>
+<script>
+    /**
+     * How many loops to run each test
+     * @type {number}
+     */
+    var testCount = 100000;
+
+    /**
+     * Time between tests
+     */
+    var testTiming = 500;
+
+    function doTests() {
+        /**
+         * Start the test
+         */
+        console.info('Test start');
+        console.info('Loop count: ' + testCount);
+
+        /**
+         * Native random test
+         */
+        console.time('Native random');
+        for (var i = 0; i < testCount; i++) {
+            Math.random();
+        }
+        console.timeEnd('Native random');
+
+        /**
+         * random-js rendom test
+         */
+        console.time('Pre generated random');
+        for (var i = 0; i < testCount; i++) {
+            random();
+        }
+        console.timeEnd('Pre generated random');
+
+        /**
+         * End test
+         */
+        console.info('Test over');
+        console.log(' ');
+
+        setTimeout(doTests, testTiming);
+    }
+
+    setTimeout(doTests, testTiming);
+</script>
+
+</body>
 </html>
