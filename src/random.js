@@ -82,9 +82,25 @@
     random.randomChanger = randomChanger;
     random._randomArray = _randomArray;
 
-    if (typeof module !== 'undefined' && module.exports) {
+    /**
+     * Export as module
+     */
+    if (typeof module === "object" && typeof module.exports === "object") {
         module.exports = random;
-    } else if (window) {
+    }
+    /**
+     * Register as AMD module
+     */
+    else if (typeof define === "function" && define.amd) {
+        define("random", [], function () {
+            return random;
+        });
+    }
+
+    /**
+     * If there is a window object, that at least has a document property, define random
+     */
+    if (typeof window === "object" && typeof window.document === "object") {
         window.random = random;
     }
 })();
