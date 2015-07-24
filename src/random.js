@@ -1,14 +1,8 @@
-/*
- window['randomOptions'] = {
- randomValuesCount: 10000,
- randomInterval: 30
- };
+/*!
+ * Faster random function
+ * Author: Hendry Sadrak <hendry.sadrak@outlook.com>
  */
-
-/**
- * Random function
- */
-window['random'] = (function randomConstruct() {
+(function randomConstruct() {
     /**
      * Options
      */
@@ -59,7 +53,7 @@ window['random'] = (function randomConstruct() {
     /**
      * Returns random value
      */
-    var randomFunction = function randomFunction(index) {
+    var random = function random(index) {
         /**
          * If index given, return by index
          */
@@ -83,7 +77,14 @@ window['random'] = (function randomConstruct() {
     /**
      * Apply some values to random function and return it
      */
-    randomFunction.options = _options;
+    random.valueOf = random;
+    random.options = _options;
+    random.randomChanger = randomChanger;
+    random._randomArray = _randomArray;
 
-    return randomFunction;
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = random;
+    } else if (window) {
+        window.random = random;
+    }
 })();
