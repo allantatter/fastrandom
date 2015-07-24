@@ -1,3 +1,13 @@
-/**
- * Created by Hendry on 24/07/15.
- */
+var gulp = require('gulp'),
+    uglify = require('gulp-uglify');
+
+gulp.task('default', function () {
+    return gulp.src('src/*.js')
+        .pipe(uglify({
+            outSourceMap: true,
+            preserveComments: 'some'
+        }))
+        .pipe(gulp.dest('dist/'));
+});
+
+gulp.watch('src/*.js', ['default'])
