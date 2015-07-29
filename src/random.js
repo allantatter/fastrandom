@@ -39,8 +39,8 @@
 
     /**
      * Returns random value
-     * @param index
-     * @returns {*}
+     * @param index - (optional) index of the random value to get
+     * @returns {float}
      */
     var random = function random(index) {
         /**
