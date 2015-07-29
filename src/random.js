@@ -13,7 +13,7 @@
         randomInterval: 30
     };
 
-    var _options = window['randomOptions'] || {};
+    var _options = window['fastrandomOptions'] || {};
     for (var option in _optionsDefault) {
         if (_optionsDefault.hasOwnProperty(option) && !_options.hasOwnProperty(option)) {
             _options[option] = _optionsDefault[option];

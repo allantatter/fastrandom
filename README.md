@@ -1,7 +1,7 @@
 # Fastrandom
 ### Made for your fast random needs
 
-Random-js works by pregenerating an array of random values and later on just calling values from the array. 
+Fastranom works by pregenerating an array of random values and later returns values from the array. 
 
 ---------
 ### Usage
@@ -48,6 +48,14 @@ random(); // returns a random value like Math.random();
 ```
 
 ### Options
+Define ```window.fastrandomOptions``` before requiring the script.
+Default options:
+```javascript
+window.fastrandomOptions = {
+    randomValuesCount: 10000, // How many random values should be generated at init
+    randomInterval: 30        // Interval, how often a new random value is generated (in ms)
+};
+```
 
 ### Development
 First you should install dependencies
