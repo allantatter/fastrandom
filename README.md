@@ -47,6 +47,8 @@ define(["fastrandom"], function (random) {
 
 ##### From CLI
 ```javascript
+npm install fastrandom -g
+
 fastrandom
 ```
 
