@@ -24,10 +24,8 @@ var random = require('fastrandom');
 random(); // returns a random value like Math.random();
 ```
 
----------
 ### Options
 
----------
 ### Development
 First you should install dependencies
 ```
@@ -40,7 +38,6 @@ Run default gulp task for minfication.
 gulp
 ```
 
----------
 ### License
 ```
 ISC
