@@ -86,7 +86,7 @@ window.fastrandomOptions = {
 ```
 
 ### Shoutout!
-##### If there is someone who knows how to write tests then fork it and do a pull request after! Thank you! I will add people who contribute to credits!
+##### If there is someone who knows how to write tests then fork it and do a pull request after! Thank you! I will add people who contribute to contributors and credits!
 
 ### Development
 First you should install dependencies
