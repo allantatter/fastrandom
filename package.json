@@ -33,6 +33,7 @@
   "bugs": {
     "url": "https://github.com/hendrysadrak/fastrandom/issues"
   },
+  "preferGlobal": true,
   "bin": {
     "fastrandom": "./bin/fastrandom.js"
   },
