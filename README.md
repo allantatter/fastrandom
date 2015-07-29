@@ -74,14 +74,17 @@ random.randomArray // [0.1414, 0.91325, ...];
 
 // Current index in the random array
 random.currentRandomIndex // 0 ... n
-
 ```
 
 ### Support
 Tested with:
-* Safari 8.0.7
-* Chrome 44.0.2403.107
-* Firefox 39
+* Safari 8.0.7 (OSX)
+* Chrome 44.0.2403.125 (PC)
+* Chrome 44.0.2403.107 (OSX)
+* Firefox 37 (PC)
+* Firefox 38 (PC)
+* Firefox 39 (OSX)
+* Microsoft Edge
 
 ### Options
 Define ```window.fastrandomOptions``` before requiring the script.
