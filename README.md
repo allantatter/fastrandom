@@ -5,6 +5,8 @@ Fastrandom works by pregenerating an array of random values and later returns va
 
 [![NPM](https://nodei.co/npm/fastrandom.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fastrandom/)
 
+[![Twitter](https://img.shields.io/twitter/url/https/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https://www.npmjs.com/package/fastrandom&via=hendrysadrak&text=Fastrandom - For your random needs&hashtags=fastrandom)
+
 ### Usage
 
 ##### npm
