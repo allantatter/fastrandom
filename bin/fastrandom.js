@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var random = require('./../src/random.js');
 
-return random();
+console.log(random());

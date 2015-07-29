@@ -154,13 +154,6 @@
      */
     if (typeof module === "object" && typeof module.exports === "object") {
         module.exports = random;
-
-        /**
-         * Called dirctly from cli
-         */
-        if (module === require.main) {
-            console.log(random());
-        }
     }
     /**
      * Register as AMD module
