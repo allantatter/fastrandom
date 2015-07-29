@@ -10,4 +10,8 @@ gulp.task('default', function () {
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.watch('src/*.js', ['default'])
+
+gulp.task('watch', function () {
+    gulp.start('default');
+    gulp.watch('src/*.js', ['default']);
+});
