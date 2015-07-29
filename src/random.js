@@ -42,7 +42,7 @@
     if (_options.removeOptions) {
         if (typeof window === "object" && window.fastrandomOptions) delete window.fastrandomOptions;
         else if (typeof global === "object" && global.fastrandomOptions)delete global.fastrandomOptions;
-        else if (typeof fastrandomOptions === "object") delete fastrandomOptions;
+        // else if (typeof fastrandomOptions === "object") delete fastrandomOptions; // can't use because of strict mode
     }
 
     /**
