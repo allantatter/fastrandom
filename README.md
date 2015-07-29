@@ -43,6 +43,11 @@ define(["fastrandom"], function (random) {
 });
 ```
 
+##### From CLI
+```javascript
+fastrandom
+```
+
 ##### Basic usage
 ```javascript
 random(); // returns a random value like Math.random();
