@@ -1,6 +1,6 @@
 {
   "name": "fastrandom",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Faster random function",
   "authors": [
     "Hendry Sadrak <hendry.sadrak@outlook.com> (http://hendrysadrak.com)"
@@ -8,7 +8,7 @@
   "main": "random.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npm install && gulp"
+    "install": "gulp && exit"
   },
   "repository": {
     "type": "git",
