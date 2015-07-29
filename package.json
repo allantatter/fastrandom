@@ -1,5 +1,5 @@
 {
-  "name": "random-js",
+  "name": "fastrandom",
   "version": "1.0.0",
   "description": "Faster random function",
   "main": "random.js",
