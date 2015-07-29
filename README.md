@@ -6,9 +6,16 @@ Random-js works by pregenerating an array of random values and later on just cal
 ---------
 ### Usage
 
+##### npm
+In your project, run the following command:
+```
+npm install fastrandom --save
+``` 
+
 ##### Require as module
 ```javascript
 var random = require('fastrandom');
+var value = random(); // random value like Math.random();
 ```
 
 ##### Use in browser
@@ -17,6 +24,22 @@ var random = require('fastrandom');
 <script type="text/javascript" src="./src/random.js"></script>
 <!-- Minified -->
 <script type="text/javascript" src="./dist/random.js"></script>
+
+<script>
+var value = random();
+</script>
+```
+
+##### Browser using AMD or RequireJS
+```javascript
+define(function (require) {
+  var random = require("fastrandom");
+  var value = random();
+});
+
+define(["fastrandom"], function (random) {
+  var value = random();
+});
 ```
 
 ##### Basic usage

@@ -138,7 +138,7 @@
          * Register as AMD module
          */
         else if (typeof define === "function" && define.amd) {
-            define("random", [], function () {
+            define("fastrandom", [], function () {
                 return random;
             });
         }
