@@ -70,7 +70,7 @@
         else {
             _currentRandomIndex++;
 
-            if (_currentRandomIndex >= _options.randomValuesCount) {
+            if (_currentRandomIndex == _options.randomValuesCount) {
                 _currentRandomIndex = 0;
             }
 
