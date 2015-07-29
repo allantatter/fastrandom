@@ -1,5 +1,5 @@
 # Fastrandom
-### Made for your fast random needs
+### Made for your faster random needs
 
 Fastrandom works by pregenerating an array of random values and later returns values from the array. 
 
