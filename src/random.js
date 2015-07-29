@@ -5,28 +5,46 @@
  */
 (function randomConstruct() {
     "use strict";
+
     /**
      * /////////////////////////////////////////////////////////////////////
      * Variables
      */
-    var _randomArray = [];
+    var
+        _randomArray = [],
 
-    var _currentRandomIndex = 0;
-    var _currentRandomChangeIndex = 0;
+        _currentRandomIndex = 0,
+        _currentRandomChangeIndex = 0;
+
+    /**
+     * /////////////////////////////////////////////////////////////////////
+     * Tests
+     */
+    var
+        hasInterface = {
+            window: (typeof window === "object"),
+            module: (typeof module === "object" && typeof module.exports === "object"),
+            amd: (typeof define === "function" && define.amd),
+            global: (typeof global === "object")
+        },
+        hasSupport = {
+            defineProp: (typeof Object.defineProperty !== "undefined")
+        };
 
     /**
      * /////////////////////////////////////////////////////////////////////
      * Options
      */
-    var _defaults = {
-        valuesCount: 10000,
-        randomInterval: 30,
-        removeOptions: true
-    };
-    var _options = {};
+    var
+        _defaults = {
+            valuesCount: 10000,
+            randomInterval: 30,
+            removeOptions: true
+        },
+        _options = {};
 
-    if (typeof window === "object" && window.fastrandomOptions)_options = window.fastrandomOptions;
-    else if (typeof global === "object" && global.fastrandomOptions) _options = global.fastrandomOptions;
+    if (hasInterface.window && window.fastrandomOptions)_options = window.fastrandomOptions;
+    else if (hasInterface.global && global.fastrandomOptions) _options = global.fastrandomOptions;
     else if (typeof fastrandomOptions === "object") _options = fastrandomOptions;
 
     for (var key in _defaults) {
@@ -40,8 +58,8 @@
      * Remove the global options var
      */
     if (_options.removeOptions) {
-        if (typeof window === "object" && window.fastrandomOptions) delete window.fastrandomOptions;
-        else if (typeof global === "object" && global.fastrandomOptions)delete global.fastrandomOptions;
+        if (hasInterface.window && window.fastrandomOptions) delete window.fastrandomOptions;
+        else if (hasInterface.global && global.fastrandomOptions) delete global.fastrandomOptions;
         // else if (typeof fastrandomOptions === "object") delete fastrandomOptions; // can't use because of strict mode
     }
 
@@ -115,7 +133,7 @@
     /**
      * If Object.defineProperty is defined then add some getters fo extended api usage
      */
-    if (typeof Object.defineProperty !== "undefined") {
+    if (hasSupport.defineProp) {
         /**
          * random.random getter
          */
@@ -152,13 +170,13 @@
     /**
      * Export as module
      */
-    if (typeof module === "object" && typeof module.exports === "object") {
+    if (hasInterface.module) {
         module.exports = random;
     }
     /**
      * Register as AMD module
      */
-    else if (typeof define === "function" && define.amd) {
+    else if (hasInterface.amd) {
         define("fastrandom", [], function () {
             return random;
         });
@@ -167,7 +185,7 @@
     /**
      * If there is a window object, that at least has a document property, define random
      */
-    if (typeof window === "object") {
+    if (hasInterface.window) {
         window.random = random;
     }
 })();
