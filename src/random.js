@@ -15,7 +15,7 @@
         removeOptions: true
     };
 
-    var _options = window['fastrandomOptions'] || {};
+    var _options = window.fastrandomOptions || {};
     for (var option in _defaults) {
         if (_defaults.hasOwnProperty(option) && !_options.hasOwnProperty(option)) {
             _options[option] = _defaults[option];
@@ -25,8 +25,8 @@
     /**
      * Remove the global options var
      */
-    if (_options.removeOptions && (typeof window['fastrandomOptions'] !== "undefined")) {
-        delete window['fastrandomOptions'];
+    if (_options.removeOptions && (typeof window.fastrandomOptions !== "undefined")) {
+        delete window.fastrandomOptions;
     }
 
     /**
@@ -66,7 +66,7 @@
             _currentRandomChangeIndex = 0;
         }
 
-        return _randomArray[_currentRandomChangeIndex++] = Math.random();
+        _randomArray[_currentRandomChangeIndex++] = Math.random();
     };
 
     if (_options.randomInterval) {
