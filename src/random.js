@@ -9,16 +9,16 @@
     /**
      * Options
      */
-    var _optionsDefault = {
+    var _defaults = {
         valuesCount: 10000,
         randomInterval: 30,
         removeOptions: true
     };
 
     var _options = window['fastrandomOptions'] || {};
-    for (var option in _optionsDefault) {
-        if (_optionsDefault.hasOwnProperty(option) && !_options.hasOwnProperty(option)) {
-            _options[option] = _optionsDefault[option];
+    for (var option in _defaults) {
+        if (_defaults.hasOwnProperty(option) && !_options.hasOwnProperty(option)) {
+            _options[option] = _defaults[option];
         }
     }
 
@@ -34,32 +34,8 @@
      */
     var _randomArray = [];
 
-    var _currentRandomIndex = -1;
-    var _currentRandomChangeIndex = -1;
-
-    /**
-     * Generate random values
-     */
-    for (var i = 0; i < _options.valuesCount; i++) {
-        _randomArray[i] = Math.random();
-    }
-
-    /**
-     * Change out random values over time
-     */
-    var randomChanger = function randomChanger() {
-        _currentRandomChangeIndex++;
-
-        if (_currentRandomChangeIndex >= _options.valuesCount) {
-            _currentRandomChangeIndex = 0;
-        }
-
-        _randomArray[_currentRandomChangeIndex] = Math.random();
-    };
-
-    if (_options.randomInterval != false) {
-        setInterval(randomChanger, _options.randomInterval);
-    }
+    var _currentRandomIndex = 0;
+    var _currentRandomChangeIndex = 0;
 
     /**
      * Returns random value
@@ -73,19 +49,36 @@
         if (index) {
             return _randomArray[index];
         }
-        /**
-         * Else take next random
-         */
-        else {
-            _currentRandomIndex++;
 
-            if (_currentRandomIndex == _options.valuesCount) {
-                _currentRandomIndex = 0;
-            }
-
-            return _randomArray[_currentRandomIndex];
+        if (_currentRandomIndex == _options.valuesCount) {
+            _currentRandomIndex = 0;
         }
+
+        return _randomArray[_currentRandomIndex++];
     };
+
+    /**
+     * Function to generate one new random value over time
+     * @type {Function}
+     */
+    random.randomChanger = function randomChanger() {
+        if (_currentRandomChangeIndex == _options.valuesCount) {
+            _currentRandomChangeIndex = 0;
+        }
+
+        return _randomArray[_currentRandomChangeIndex++] = Math.random();
+    };
+
+    if (_options.randomInterval) {
+        setInterval(random.randomChanger, _options.randomInterval);
+    }
+
+    /**
+     * Generate random values
+     */
+    for (var i = 0; i < _options.valuesCount; i++) {
+        random.randomChanger();
+    }
 
     /**
      * Extends random functions with some values
@@ -102,12 +95,6 @@
          * @type {Object}
          */
         random.options = _options;
-
-        /**
-         * Function to generate one new random value
-         * @type {Function}
-         */
-        random.randomChanger = randomChanger;
 
         /**
          * If Object.defineProperty is defined then add some getters fo extended api usage
