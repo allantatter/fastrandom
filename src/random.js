@@ -10,7 +10,8 @@
      */
     var _optionsDefault = {
         valuesCount: 10000,
-        randomInterval: 30
+        randomInterval: 30,
+        removeOptions: true
     };
 
     var _options = window['fastrandomOptions'] || {};
@@ -18,6 +19,13 @@
         if (_optionsDefault.hasOwnProperty(option) && !_options.hasOwnProperty(option)) {
             _options[option] = _optionsDefault[option];
         }
+    }
+
+    /**
+     * Remove the global options var
+     */
+    if (_options.removeOptions && (typeof window['fastrandomOptions'] !== "undefined")) {
+        delete window['fastrandomOptions'];
     }
 
     /**
