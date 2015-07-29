@@ -3,7 +3,8 @@
 
 Fastranom works by pregenerating an array of random values and later returns values from the array. 
 
----------
+[![NPM](https://nodei.co/npm/fastrandom.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fastrandom/)
+
 ### Usage
 
 ##### npm
