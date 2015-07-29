@@ -9,7 +9,7 @@
      * Options
      */
     var _optionsDefault = {
-        randomValuesCount: 10000,
+        valuesCount: 10000,
         randomInterval: 30
     };
 
@@ -31,7 +31,7 @@
     /**
      * Generate random values
      */
-    for (var i = 0; i < _options.randomValuesCount; i++) {
+    for (var i = 0; i < _options.valuesCount; i++) {
         _randomArray[i] = Math.random();
     }
 
@@ -41,7 +41,7 @@
     var randomChanger = function randomChanger() {
         _currentRandomChangeIndex++;
 
-        if (_currentRandomChangeIndex >= _options.randomValuesCount) {
+        if (_currentRandomChangeIndex >= _options.valuesCount) {
             _currentRandomChangeIndex = 0;
         }
 
@@ -70,7 +70,7 @@
         else {
             _currentRandomIndex++;
 
-            if (_currentRandomIndex == _options.randomValuesCount) {
+            if (_currentRandomIndex == _options.valuesCount) {
                 _currentRandomIndex = 0;
             }
 

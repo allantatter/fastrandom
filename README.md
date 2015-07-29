@@ -52,8 +52,8 @@ Define ```window.fastrandomOptions``` before requiring the script.
 Default options:
 ```javascript
 window.fastrandomOptions = {
-    randomValuesCount: 10000, // How many random values should be generated at init
-    randomInterval: 30        // Interval, how often a new random value is generated (in ms)
+    valuesCount: 10000,   // How many random values should be generated at init
+    randomInterval: 30    // Interval, how often a new random value is generated (in ms)
 };
 ```
 
