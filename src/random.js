@@ -23,8 +23,12 @@
         randomInterval: 30,
         removeOptions: true
     };
+    var _options = {};
 
-    var _options = window.fastrandomOptions || {};
+    if (typeof window === "object" && window.fastrandomOptions)_options = window.fastrandomOptions;
+    else if (typeof global === "object" && global.fastrandomOptions) _options = global.fastrandomOptions;
+    else if (typeof fastrandomOptions === "object") _options = fastrandomOptions;
+
     for (var key in _defaults) {
         if (_defaults.hasOwnProperty(key) && !_options.hasOwnProperty(key)) {
             _options[key] = _defaults[key];
@@ -161,7 +165,7 @@
     /**
      * If there is a window object, that at least has a document property, define random
      */
-    if (typeof window === "object" && typeof window.document === "object") {
+    if (typeof window === "object") {
         window.random = random;
     }
 })();
