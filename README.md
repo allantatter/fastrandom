@@ -1,7 +1,7 @@
 # Fastrandom
-### Made for your fast random needs
+### Made for your faster random needs
 
-Fastranom works by pregenerating an array of random values and later returns values from the array. 
+Fastrandom works by pregenerating an array of random values and later returns values from the array. 
 
 [![NPM](https://nodei.co/npm/fastrandom.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fastrandom/)
 
