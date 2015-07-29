@@ -89,7 +89,7 @@
     /**
      * Extends random functions with some values
      */
-    function setRandomExtentions() {
+    function setRandomExtensions() {
         /**
          * Random valueOf
          * @type {Function}
@@ -113,7 +113,7 @@
          */
         if (typeof Object.defineProperty !== "undefined") {
             /**
-             * random.randomArray returns urrent random values array
+             * random.randomArray returns current random values array
              */
             Object.defineProperty(random, 'randomArray', {
                 get: function () {
@@ -162,6 +162,6 @@
     /**
      * Do the magic ;)
      */
-    setRandomExtentions();
+    setRandomExtensions();
     setRandomExport();
 })();

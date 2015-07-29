@@ -47,6 +47,12 @@ define(["fastrandom"], function (random) {
 random(); // returns a random value like Math.random();
 ```
 
+### Support
+Tested with:
+Safari 8.0.7
+Chrome 44.0.2403.107
+Firefox 39
+
 ### Options
 Define ```window.fastrandomOptions``` before requiring the script.
 Default options:
