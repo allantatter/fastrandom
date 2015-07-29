@@ -1,7 +1,7 @@
 # Fastrandom
 ### Made for your faster random needs
 
-Fastrandom works by pregenerating an array of random values and later returns values from the array. 
+Fastrandom works by pregenerating an array of random values and later returns values from the array.
 
 [![NPM](https://nodei.co/npm/fastrandom.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fastrandom/)
 
@@ -11,7 +11,7 @@ Fastrandom works by pregenerating an array of random values and later returns va
 In your project, run the following command:
 ```
 npm install fastrandom --save
-``` 
+```
 
 ##### Require as module
 ```javascript
@@ -46,6 +46,26 @@ define(["fastrandom"], function (random) {
 ##### Basic usage
 ```javascript
 random(); // returns a random value like Math.random();
+```
+
+##### Other functions
+```javascript
+// Returns object of current options
+random.options
+
+// generates a new random value to array changing out an old one in current index
+random.randomChanger();
+
+// If browser supports getters and setters then there is also:
+// getter version of the random
+random.random // returns a random value like Math.random(); works the same like random();
+
+// array that contains current random values
+random.randomArray // [0.1414, 0.91325, ...];
+
+// Current index in the random array
+random.currentRandomIndex // 0 ... n
+
 ```
 
 ### Support

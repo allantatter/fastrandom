@@ -1,6 +1,7 @@
 /*!
  * Faster random function
- * Author: Hendry Sadrak <hendry.sadrak@outlook.com>
+ * Made for your faster random needs
+ * Author: Hendry Sadrak <hendry.sadrak@outlook.com> (http://hendrysadrak.com)
  */
 (function randomConstruct() {
     "use strict";
@@ -112,6 +113,15 @@
          * If Object.defineProperty is defined then add some getters fo extended api usage
          */
         if (typeof Object.defineProperty !== "undefined") {
+            /**
+             * random.random getter
+             */
+            Object.defineProperty(random, 'random', {
+                get: function () {
+                    return random();
+                }
+            });
+
             /**
              * random.randomArray returns current random values array
              */
