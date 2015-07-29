@@ -1,5 +1,0 @@
-/*!
- * Faster random function
- * Author: Hendry Sadrak <hendry.sadrak@outlook.com>
- */
-!function(){"use strict";function n(){s.valueOf=s,s.options=t,s.randomChanger=u,"undefined"!=typeof Object.defineProperty&&(Object.defineProperty(s,"randomArray",{get:function(){return a}}),Object.defineProperty(s,"currentRandomIndex",{get:function(){return d}}))}function e(){"object"==typeof module&&"object"==typeof module.exports?module.exports=s:"function"==typeof define&&define.amd&&define("fastrandom",[],function(){return s}),"object"==typeof window&&"object"==typeof window.document&&(window.random=s)}var o={valuesCount:1e4,randomInterval:30,removeOptions:!0},t=window.fastrandomOptions||{};for(var r in o)o.hasOwnProperty(r)&&!t.hasOwnProperty(r)&&(t[r]=o[r]);t.removeOptions&&"undefined"!=typeof window.fastrandomOptions&&delete window.fastrandomOptions;for(var a=[],d=-1,f=-1,i=0;i<t.valuesCount;i++)a[i]=Math.random();var u=function(){f++,f>=t.valuesCount&&(f=0),a[f]=Math.random()};0!=t.randomInterval&&setInterval(u,t.randomInterval);var s=function(n){return n?a[n]:(d++,d==t.valuesCount&&(d=0),a[d])};n(),e()}();
