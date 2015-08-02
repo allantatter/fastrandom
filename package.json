@@ -7,7 +7,7 @@
   ],
   "main": "./src/random.js",
   "scripts": {
-    "test": "jasmine",
+    "test": "node_modules/.bin/jasmine",
     "prepublish": "gulp",
     "install": "npm install --ignore-scripts && gulp && exit 0"
   },
